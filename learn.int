@@ -1,0 +1,20 @@
+# Question #1:
+from user import User
+
+def register():
+    while True:
+        check = input('Enter Password: ')
+        if len(check) > 8 and check[0].isupper():
+            break
+        print('Password must be longer than 8 and start with upper letter!')
+    return check
+
+
+print('REGISTER')
+user = User(
+    input('Enter Username: '), register(), input('Enter Code: '))
+
+while True:
+    print('\n', 'LOGIN')
+    user.login(input('Enter Username: '), input('Enter password: '))
+
